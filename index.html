@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio V1 Final</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-theme="light">
+
+    <header>
+        <nav class="container">
+            <div class="logo">Sanemi<span>Dev</span></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0)" onclick="loginAdmin()" id="adminMenu">Admin</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section reveal">
+            <div class="container grid-2">
+                <div class="hero-text">
+                    <span class="badge">🚀 Available for Projects</span>
+                    <h1>Transform Ideas Into <span class="accent">Digital Reality</span></h1>
+                    <p>Membangun solusi web modern dengan desain responsif, performa tinggi, dan pengalaman pengguna yang luar biasa.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn-primary">Lihat Project</a>
+                        <a href="#contact" class="btn-outline">Kontak Saya</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="blob-shape">
+                        <img src="https://via.placeholder.com/300" alt="Hero Illustration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section reveal">
+            <div class="container grid-2">
+                <div class="about-img">
+                    <img src="https://via.placeholder.com/350x450" alt="Profil" class="profile-img">
+                </div>
+                <div class="about-info">
+                    <h2>Tentang Saya</h2>
+                    <p>Saya adalah pengembang web yang berfokus pada hasil berkualitas tinggi. Menggabungkan kreativitas desain dengan ketepatan teknis.</p>
+                    <div class="cta-container reveal">
+                        <a href="file-cv-anda.pdf" download class="btn-download">
+                            <span class="btn-text">Download CV</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="spotify-section reveal">
+    <div class="container">
+        <h2 class="center">Musik Favorit Saya</h2>
+        <div class="spotify-flex-container">
+            <div class="spotify-card">
+                <iframe src="https://open.spotify.com/embed/track/4cBm8rv2B5BJWU2pDaHVbF?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-card">
+                <iframe src="https://open.spotify.com/embed/track/3hEfpBHxgieRLz4t3kLNEg?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-card">
+                <iframe src="https://open.spotify.com/embed/track/2GBgiuXwY1KzJMA0gSAr9J?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-card">
+                <iframe src="https://open.spotify.com/embed/track/3ld1FzyNgpZwGn4h9cOXrq?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="spotify-card">
+                <iframe src="https://open.spotify.com/embed/playlist/04BXJptw9ZXSj6SBuWPoTE?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            </div>
+    </div>
+</section>
+
+        <section id="skills">
+            <div class="container">
+                <div class="center">
+                    <h2 style="font-size: 2.5rem; margin-top: 10px;">Keahlian Saya</h2>
+                </div>
+                <div class="grid-2" id="skillsGrid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+                    
+                    <div class="project-card reveal" onclick="openSkillPopup('Frontend Dev', 'HTML, CSS, JavaScript, React, Tailwind')" style="cursor: pointer;">
+                        <div style="padding: 30px; text-align: center;">
+                            <i class="fab fa-html5" style="font-size: 3rem; color: #e34c26; margin-bottom: 15px;"></i>
+                            <h3>Frontend Dev</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">HTML, CSS, JavaScript, React</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" onclick="openSkillPopup('Backend Dev', 'Node.js, PHP, MySQL, MongoDB, Python')" style="cursor: pointer;">
+                        <div style="padding: 30px; text-align: center;">
+                            <i class="fas fa-server" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+                            <h3>Backend Dev</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Node.js, Express, PHP, MySQL</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" onclick="openSkillPopup('Responsive Design', 'Mobile First, Tailwind CSS, Media Queries')" style="cursor: pointer;">
+                        <div style="padding: 30px; text-align: center;">
+                            <i class="fas fa-mobile-alt" style="font-size: 3rem; color: #4ade80; margin-bottom: 15px;"></i>
+                            <h3>Responsive Design</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Mobile First Approach, Tailwind</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card reveal" onclick="openSkillPopup('DevOps & Tools', 'Git, Docker, Firebase, Netlify')" style="cursor: pointer;">
+                        <div style="padding: 30px; text-align: center;">
+                            <i class="fas fa-tools" style="font-size: 3rem; color: #facc15; margin-bottom: 15px;"></i>
+                            <h3>DevOps & Tools</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Git, Docker, Firebase, Netlify</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section reveal">
+            <div class="container">
+                <h2 class="center">Project Dump</h2>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="projectSearch" placeholder="Cari teknologi (React, JS, PHP)...">
+                </div>
+                <div class="filter-wrapper reveal">
+                    <div class="filter-container">
+                        <button class="filter-btn active" onclick="filterProjects('All', this)">Semua</button>
+                        <button class="filter-btn" onclick="filterProjects('React', this)">React</button>
+                        <button class="filter-btn" onclick="filterProjects('JS', this)">JavaScript</button>
+                        <button class="filter-btn" onclick="filterProjects('API', this)">API</button>
+                        <button class="filter-btn" onclick="filterProjects('PHP', this)">PHP</button>
+                    </div>
+                </div>
+                <div class="project-grid" id="projectGrid"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section reveal">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <h2 class="center">Hubungi Saya</h2>
+                    <div class="social-contact-wrapper reveal">
+                        <div class="social-icons-container">
+                            <a href="https://wa.me/62895337476946" target="_blank" class="social-icon wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://github.com/SanemiNeedHelp" target="_blank" class="social-icon gh" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://instagram.com/sanemiyaa" target="_blank" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/fachri-ahmad-maulana-837a50350" target="_blank" class="social-icon li" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://facebook.com/Fahri.0611" target="_blank" class="social-icon fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                  <form class="pro-form" id="my-form" action="https://formspree.io/f/mjgejeoa" method="POST">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Nama Lengkap</label>
+            <input type="text" name="name" placeholder="Masukkan nama Anda" required>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="_replyto" placeholder="email@anda.com" required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Pesan</label>
+        <textarea name="message" rows="5" placeholder="Detail proyek Anda..." required></textarea>
+    </div>
+    
+    <button type="submit" id="submit-btn" class="btn-submit-large">
+        Kirim Pesan <i class="fas fa-paper-plane"></i>
+    </button>
+    
+    <div id="form-status" class="form-status-msg"></div>
+</form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="theme-toggle" class="floating-theme-btn" title="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <footer>
+        <div class="container center">
+            <p>&copy; <span id="year"></span> Created with ❤️ by <strong>Sanemiya</strong></p>
+            <small style="opacity: 0.6;">Specialized in Web Development</small>
+        </div>
+    </footer>
+
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeGallery()">&times;</span>
+            <img id="modalImg" src="">
+            <a class="prev" onclick="changeImg(-1)">&#10094;</a>
+            <a class="next" onclick="changeImg(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <div id="skillModal" class="modal">
+        <div class="modal-content" style="background: var(--bg-card); padding: 30px; max-width: 450px; text-align: center; border: 1px solid var(--border); border-radius: 20px;">
+            <span class="close-modal" onclick="closeSkillModal()" style="top: 10px; right: 20px;">&times;</span>
+            <h2 id="popupTitle" style="margin-bottom: 15px;"></h2>
+            <div id="techContainer" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
