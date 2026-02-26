@@ -348,46 +348,39 @@ const statusMsg = document.getElementById("form-status");
 const submitBtn = document.getElementById("submit-btn");
 
 async function handleSubmit(event) {
-    event.preventDefault(); // Mencegah pindah halaman
-    
+    event.preventDefault();
     const data = new FormData(event.target);
-    
-    // UI: Loading State
-    submitBtn.innerHTML = "Mengirim... <i class='fas fa-spinner fa-spin'></i>";
     submitBtn.disabled = true;
-    statusMsg.className = "form-status-msg"; // Reset class
-    statusMsg.innerHTML = "";
 
     fetch(event.target.action, {
         method: contactForm.method,
         body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
     }).then(response => {
         if (response.ok) {
-            // Sukses
-            statusMsg.classList.add("success");
-            statusMsg.innerHTML = "✅ Pesan berhasil terkirim! Saya akan segera menghubungi Anda.";
+            // Notifikasi Sukses Melayang
+            Swal.fire({
+                icon: 'success',
+                title: 'Pesan Terkirim!',
+                text: 'Terima kasih, saya akan segera menghubungi Anda.',
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 4000
+            });
             contactForm.reset();
         } else {
-            // Gagal dari server
-            response.json().then(data => {
-                statusMsg.classList.add("error");
-                if (Object.hasOwn(data, 'errors')) {
-                    statusMsg.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                } else {
-                    statusMsg.innerHTML = "❌ Terjadi masalah saat mengirim pesan.";
-                }
-            })
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal!',
+                text: 'Ada masalah saat mengirim pesan.',
+                toast: true,
+                position: 'top-end'
+            });
         }
     }).catch(error => {
-        // Gagal koneksi/jaringan
-        statusMsg.classList.add("error");
-        statusMsg.innerHTML = "❌ Terjadi kesalahan jaringan. Silakan coba lagi.";
+        Swal.fire({ icon: 'error', title: 'Kesalahan Jaringan!' });
     }).finally(() => {
-        // UI: Reset Button
-        submitBtn.innerHTML = "Kirim Pesan <i class='fas fa-paper-plane'></i>";
         submitBtn.disabled = false;
     });
 }
