@@ -7,7 +7,7 @@
     <title>Portfolio V1 Final</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1.1">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -19,6 +19,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#musik">Music</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -37,16 +38,16 @@
             <div class="container grid-2">
                 <div class="hero-text">
                     <span class="badge">🚀 Available for Projects</span>
-                    <h1>Transform Ideas Into <span class="accent">Digital Reality</span></h1>
-                    <p>Membangun solusi web modern dengan desain responsif, performa tinggi, dan pengalaman pengguna yang luar biasa.</p>
+                    <h1>Engineering Seamless <span class="accent">Digital Connectivity</span></h1>
+                    <p>Merancang infrastruktur jaringan yang andal dengan implementasi MikroTik dan Cisco, didukung kemampuan troubleshooting presisi untuk konektivitas tanpa hambatan.</p>
                     <div class="hero-btns">
-                        <a href="#projects" class="btn-primary">Lihat Project</a>
-                        <a href="#contact" class="btn-outline">Kontak Saya</a>
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-outline">Contact Me</a>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="blob-shape">
-                        <img src="https://via.placeholder.com/300" alt="Hero Illustration">
+                        <img src="./img/1.png" alt="Hero Illustration">
                     </div>
                 </div>
             </div>
@@ -55,11 +56,12 @@
         <section id="about" class="about-section reveal">
             <div class="container grid-2">
                 <div class="about-img">
-                    <img src="https://via.placeholder.com/350x450" alt="Profil" class="profile-img">
+                    <img src="./img/2.png" alt="Profil" class="profile-img">
                 </div>
                 <div class="about-info">
-                    <h2>Tentang Saya</h2>
-                    <p>Saya adalah pengembang web yang berfokus pada hasil berkualitas tinggi. Menggabungkan kreativitas desain dengan ketepatan teknis.</p>
+                    <h2>About Me</h2>
+                    <br>
+                    <p>Sebagai lulusan Teknik Komputer dan Jaringan (TKJ), saya memiliki dedikasi dan kompetensi yang solid di bidang Network Engineering. Saya tersertifikasi MTCNA dan memiliki keahlian teknis dalam merancang, mengonfigurasi, serta mengelola infrastruktur jaringan menggunakan perangkat MikroTik dan Cisco. Didukung dengan kemampuan troubleshooting yang tajam, saya selalu siap menganalisis dan memecahkan masalah teknis untuk memastikan setiap sistem jaringan beroperasi secara optimal, stabil, dan andal.</p>
                     <div class="cta-container reveal">
                         <a href="file-cv-anda.pdf" download class="btn-download">
                             <span class="btn-text">Download CV</span>
@@ -70,9 +72,9 @@
             </div>
         </section>
 
-        <section class="spotify-section reveal">
-    <div class="container">
-        <h2 class="center">Musik Favorit Saya</h2>
+        <section id="musik" class="spotify-section reveal">
+        <div class="container">
+        <h2 class="center">My Favorite Music</h2>
         <div class="spotify-flex-container">
             <div class="spotify-card">
                 <iframe src="https://open.spotify.com/embed/track/4cBm8rv2B5BJWU2pDaHVbF?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -90,13 +92,13 @@
                 <iframe src="https://open.spotify.com/embed/playlist/04BXJptw9ZXSj6SBuWPoTE?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             </div>
-    </div>
-</section>
+            </div>
+            </section>
 
         <section id="skills">
             <div class="container">
                 <div class="center">
-                    <h2 style="font-size: 2.5rem; margin-top: 10px;">Keahlian Saya</h2>
+                    <h2 style="font-size: 2.5rem; margin-top: 10px;">My Skill</h2>
                 </div>
                 <div class="grid-2" id="skillsGrid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
                     
@@ -138,7 +140,7 @@
 
         <section id="projects" class="projects-section reveal">
             <div class="container">
-                <h2 class="center">Project Dump</h2>
+                <h2 class="center">My Project</h2>
                 <div class="search-container">
                     <i class="fas fa-search"></i>
                     <input type="text" id="projectSearch" placeholder="Cari teknologi (React, JS, PHP)...">
@@ -159,10 +161,10 @@
         <section id="contact" class="contact-section reveal">
             <div class="container">
                 <div class="contact-wrapper">
-                    <h2 class="center">Hubungi Saya</h2>
+                    <h2 class="center">Contact Me</h2>
                     <div class="social-contact-wrapper reveal">
                         <div class="social-icons-container">
-                            <a href="https://wa.me/62895337476946" target="_blank" class="social-icon wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://wa.me/6289673381319" target="_blank" class="social-icon wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             <a href="https://github.com/SanemiNeedHelp" target="_blank" class="social-icon gh" title="GitHub"><i class="fab fa-github"></i></a>
                             <a href="https://instagram.com/sanemiyaa" target="_blank" class="social-icon ig" title="Instagram"><i class="fab fa-instagram"></i></a>
                             <a href="https://linkedin.com/in/fachri-ahmad-maulana-837a50350" target="_blank" class="social-icon li" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>

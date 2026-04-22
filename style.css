@@ -161,6 +161,11 @@ section {
     margin-top: 30px;
 }
 
+.about-img img{
+    width: 100%;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+}
+
 /* Hero Blob Animation */
 .blob-shape {
     width: 350px;
@@ -174,8 +179,14 @@ section {
 }
 
 .blob-shape img {
-    width: 70%;
+    width: 130%;
     filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    border-radius: 100%;
+}
+
+#musik {
+  /* Atur angkanya sesuai jarak yang kamu mau atau seukuran tinggi navbar kamu */
+  scroll-margin-top: 50px; 
 }
 
 @keyframes morph {
