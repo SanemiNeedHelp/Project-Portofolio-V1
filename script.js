@@ -1,7 +1,6 @@
 /**
  * 1. INISIALISASI STATE & DATA
  */
-let isAdmin = false;
 let currentGallery = [];
 let currentIndex = 0;
 
@@ -86,7 +85,6 @@ function renderProjects(filter = "") {
                     ${displayComments.map((c, index) => `
                         <div class="comment-item">
                             <span>${c}</span>
-                            ${isAdmin ? `<button class="del-btn" onclick="deleteComment(${p.id}, ${index})">✕</button>` : ''}
                         </div>
                     `).join('')}
                 </div>
@@ -130,48 +128,6 @@ function updateModalImg() {
 /**
  * 4. ADMIN & SECURITY
  */
-async function hashPassword(string) {
-    const utf8 = new TextEncoder().encode(string);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-async function loginAdmin() {
-    // 1. Jika sudah Admin, maka LOGOUT
-    if (isAdmin) {
-        isAdmin = false;
-        alert("Otoritas Admin Dicabut.");
-
-        const menu = document.getElementById('adminMenu');
-        if (menu) {
-            menu.innerText = "Admin";
-            menu.style.color = "";
-        }
-        renderProjects();
-        return;
-    }
-
-    // 2. Jika bukan Admin, maka LOGIN
-    const password = prompt("Masukkan Password Otoritas Admin:");
-    if (!password) return;
-
-    const hashedPassword = await hashPassword(password);
-    const targetHash = "dbf8253f8a03494c7b3494e59a5f4254865b045004501c2595c479458031be8f"; // Hash dari "password"
-
-    if (hashedPassword === targetHash) {
-        isAdmin = true;
-        alert("Akses Admin Diterima!");
-        const menu = document.getElementById('adminMenu');
-        if (menu) {
-            menu.innerText = "Admin (Active)";
-            menu.style.color = "var(--primary)";
-        }
-        renderProjects();
-    } else {
-        alert("Password Salah!");
-    }
-}
 
 /**
  * 5. COMMENT LOGIC
@@ -185,16 +141,6 @@ function addComment(e, id) {
         localStorage.setItem('portfolio_comments', JSON.stringify(savedComments));
         renderProjects();
         e.target.value = "";
-    }
-}
-
-function deleteComment(projectId, commentIndex) {
-    if (!isAdmin) return;
-    let savedComments = JSON.parse(localStorage.getItem('portfolio_comments')) || {};
-    if (savedComments[projectId]) {
-        savedComments[projectId].splice(commentIndex, 1);
-        localStorage.setItem('portfolio_comments', JSON.stringify(savedComments));
-        renderProjects();
     }
 }
 
